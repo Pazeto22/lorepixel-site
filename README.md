@@ -1,39 +1,31 @@
-# lorepixel-site
+# LorePixel
 
-This template should help get you started developing with Vue 3 in Vite.
+## Sobre o projeto
 
-## Recommended IDE Setup
+**LorePixel** é um projeto pessoal dedicado a trazer notícias, análises e primeiras impressões sobre filmes, jogos, animes e games. Com uma abordagem cuidadosa e uma paixão pelo entretenimento, LorePixel visa oferecer uma experiência envolvente para os entusiastas de cultura pop.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+O site é desenvolvido utilizando as tecnologias mais modernas, incluindo **Vue 3.0** para uma experiência de usuário reativa e dinâmica, **TypeScript** para garantir código de alta qualidade e segurança, **Vite** para um desenvolvimento rápido e eficiente, e **SCSS** para um design responsivo.
 
-## Type Support for `.vue` Imports in TS
+Seja você um fã de filmes, um gamer hardcore ou um amante de animes, LorePixel é o lugar perfeito para se manter atualizado com as últimas novidades e opiniões sobre o que há de melhor no mundo do entretenimento.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Comandos do projeto
 
-## Customize configuration
+Acesse a [documentação do Vite](https://vitejs.dev/config/) para mais detalhes.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+### Setup inicial
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Compilação e start do projeto para desenvolvimento
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### Build
 
 ```sh
 npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
