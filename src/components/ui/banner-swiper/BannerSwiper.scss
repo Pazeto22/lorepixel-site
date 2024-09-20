@@ -1,0 +1,42 @@
+@import '/src/design/colors.scss';
+
+.banner-swiper {
+  width: 100vw;
+
+  img {
+    width: 100vw;
+    height: 33vw;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.swiper-wrapper {
+  position: relative;
+}
+
+.swiper-pagination-bullets {
+  position: absolute !important;
+  left: 0;
+  right: 0;
+  bottom: 16px !important;
+  margin: 0 auto !important;
+  width: fit-content !important;
+  background-color: $transparent-black;
+  border-radius: 16px;
+  padding: 0px 16px;
+
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #524f4f !important;
+    border-radius: 100px;
+    opacity: 50%;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 32px;
+    height: 12px;
+    opacity: 100%;
+  }
+}

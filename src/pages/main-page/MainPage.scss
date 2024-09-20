@@ -1,7 +1,11 @@
+.main-page {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (min-width: 1024px) {
   .main-page {
     min-height: 100vh;
-    display: flex;
     align-items: center;
   }
 }
