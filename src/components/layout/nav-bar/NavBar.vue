@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Componentes
-import { PageContainer } from '@/components/ui'
+import { PageContainer } from '@/components/layout'
 // Ícones
 import LorePixelLogo from '@/components/icons/LorePixelLogo.vue'
 </script>

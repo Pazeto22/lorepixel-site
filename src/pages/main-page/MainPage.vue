@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { PageContainer, BannerSwiper } from '@/components/ui'
+import { PageContainer } from '@/components/layout'
+import { BannerSwiper } from '@/components'
 </script>
 
 <template>
