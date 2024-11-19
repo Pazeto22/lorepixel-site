@@ -1,0 +1,91 @@
+@import '/src/design/colors.scss';
+
+.movie-card {
+  &__wrapper {
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+    border-radius: 16px;
+    background-color: $main-black;
+    color: $main-white;
+    transition: all 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+      -webkit-box-shadow: 0px 16px 32px -24px $transparent-black;
+      -moz-box-shadow: 0px 16px 32px -24px $transparent-black;
+      box-shadow: 0px 16px 32px -24px $transparent-black;
+    }
+  }
+
+  &__figure {
+    margin-bottom: 0;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 115px;
+    height: 170px;
+  }
+
+  &__figure-img {
+    width: 115px;
+    height: 170px;
+    object-fit: fill;
+  }
+
+  &__contents {
+    position: relative;
+    margin: 1rem;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__bottom {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  &__button {
+    outline: none;
+    border: 1px solid $main-gray;
+    border-radius: 16px;
+    width: 48px;
+    height: 48px;
+    background-color: $main-black;
+    text-decoration: none;
+    color: $main-white;
+
+    span {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $main-gray;
+    }
+  }
+}

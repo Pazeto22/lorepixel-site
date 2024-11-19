@@ -10,3 +10,7 @@ import { NavBar } from '@/components/layout'
 
   <RouterView />
 </template>
+
+<style>
+@import 'floating-vue/dist/style.css';
+</style>
