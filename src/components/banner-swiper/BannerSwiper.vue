@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import api from '@/config/api'
 import type { MovieType } from '@/types/movieType'
-import { Pagination, A11y } from 'swiper/modules'
+import { Pagination, A11y, Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { onMounted, onUnmounted, ref } from 'vue'
 
 /**
  * Módulos do Swiper
  */
-const modules = [Pagination, A11y]
+const modules = [Pagination, A11y, Autoplay]
 
 /**
  * Variável que controla a exibição do background desfocado
@@ -70,14 +70,24 @@ onUnmounted(() => {
       :modules="modules"
       :pagination="{ clickable: true }"
       :loop="true"
+      :autoplay="{
+        delay: 4000,
+        disableOnInteraction: false
+      }"
     >
       <swiper-slide v-for="banner in popularBanners" :key="banner.id">
-        <img class="swiper-image" :src="`${tmdbMediaUrl}/${banner.backdrop_path}`" />
-        <img
-          v-if="displayBlurredBackground"
-          class="swiper-background-image"
-          :src="`${tmdbMediaUrl}/${banner.backdrop_path}`"
-        />
+        <div class="banner-swiper__item">
+          <div class="banner-swiper__content">
+            <h2 class="banner-swiper__title">{{ banner.title }}</h2>
+            <p class="banner-swiper__overview">{{ banner.overview }}</p>
+          </div>
+          <img class="banner-swiper__image" :src="`${tmdbMediaUrl}/${banner.backdrop_path}`" />
+          <img
+            v-if="displayBlurredBackground"
+            class="banner-swiper__background-image"
+            :src="`${tmdbMediaUrl}/${banner.backdrop_path}`"
+          />
+        </div>
       </swiper-slide>
     </swiper>
   </div>
@@ -89,4 +99,5 @@ onUnmounted(() => {
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
 @import 'swiper/css/scrollbar';
+@import 'swiper/css/autoplay';
 </style>

@@ -6,12 +6,7 @@
   background-color: $pure-black;
   position: relative;
 
-  .swiper-slide {
-    position: relative;
-    height: 100%;
-  }
-
-  .swiper-image {
+  &__image {
     margin: 0 auto;
     max-width: 1280px;
     width: 100%;
@@ -23,7 +18,7 @@
     object-fit: cover !important;
   }
 
-  .swiper-background-image {
+  &__background-image {
     position: absolute;
     top: 0;
     left: 50%;
@@ -34,6 +29,34 @@
     filter: blur(20px);
     z-index: 1;
     opacity: 0.6; // Opcional: Ajusta a visibilidade do background
+  }
+
+  &__content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 0;
+    z-index: 3;
+    text-align: center;
+    color: $main-white;
+    background-color: $transparent-black-plus;
+    backdrop-filter: blur(8px);
+    width: 100%;
+    max-width: 1280px;
+    padding: 1rem 2rem;
+    padding-bottom: 3rem;
+  }
+
+  &__overview {
+    overflow: hidden;
+    display: -webkit-box;
+    margin-top: 0.5rem;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    text-overflow: ellipsis;
+    font-size: 14px;
   }
 }
 
