@@ -1,4 +1,5 @@
 @import './globals.css';
+@import './font.css';
 
 #app {
   width: 100%;
@@ -29,4 +30,27 @@ a,
   #app {
     padding-top: 84px;
   }
+}
+
+body {
+  font-family: 'Signika', sans-serif;
+  font-weight: 400; /* Regular */
+}
+
+h1 {
+  font-family: 'Signika', sans-serif;
+  font-weight: 600; /* Semi-bold */
+}
+
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Signika', sans-serif;
+  font-weight: 500; /* Medium */
+}
+
+strong {
+  font-family: 'Signika', sans-serif;
+  font-weight: bold; /* Bold */
 }

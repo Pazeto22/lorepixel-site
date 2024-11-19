@@ -1,11 +1,29 @@
 .main-page {
   display: flex;
   flex-direction: column;
-}
 
-@media (min-width: 1024px) {
-  .main-page {
-    min-height: 100vh;
-    align-items: center;
+  &__movies-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    width: 100%;
+  }
+
+  @media (max-width: 1279.98px) {
+    &__movies-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 1023.98px) {
+    &__movies-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    &__movies-list {
+      grid-template-columns: 1fr;
+    }
   }
 }
