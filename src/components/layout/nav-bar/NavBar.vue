@@ -1,17 +1,18 @@
 <script setup lang="ts">
 // Componentes
 import { PageContainer } from '@/components/layout'
-// Ícones
+
 import LorePixelLogo from '@/components/icons/LorePixelLogo.vue'
 </script>
 
 <template>
   <div class="nav-bar">
-    <page-container>
-      <div class="nav-bar--logo">
-        <lore-pixel-logo />
+    <PageContainer>
+      <div class="nav-bar__logo">
+        <img src="@/assets/logo-3.png" alt="logo" />
+        <LorePixelLogo />
       </div>
-    </page-container>
+    </PageContainer>
   </div>
 </template>
 

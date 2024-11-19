@@ -13,8 +13,20 @@
   background-color: $main-black;
   color: $main-white;
 
-  &--logo > svg {
-    height: 24px;
-    width: auto;
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    & > img {
+      height: 48px;
+      width: auto;
+    }
+
+    & > svg {
+      height: 24px;
+      width: auto;
+      margin-top: 0.5rem;
+    }
   }
 }
