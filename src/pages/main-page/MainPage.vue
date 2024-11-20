@@ -8,8 +8,8 @@ const { fetchNowPlayingMovies, fetchUpcomingMovies, upcomingMovies, nowPlayingMo
   useFetchMovies()
 
 onMounted(() => {
-  fetchUpcomingMovies()
-  fetchNowPlayingMovies()
+  fetchUpcomingMovies(8)
+  fetchNowPlayingMovies(16)
 })
 </script>
 

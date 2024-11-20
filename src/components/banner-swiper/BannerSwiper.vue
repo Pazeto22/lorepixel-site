@@ -2,11 +2,11 @@
 import { onMounted, onUnmounted } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination, A11y, Autoplay } from 'swiper/modules'
-import { useBannerSwiper } from '@/composables'
+import { useBannerSwiper, useFetchMovies } from '@/composables'
 import { tmdbMediaUrl } from '@/config/constants'
 
-const { updateViewportWidth, getFiveBanners, popularBanners, displayBlurredBackground } =
-  useBannerSwiper()
+const { updateViewportWidth, displayBlurredBackground } = useBannerSwiper()
+const { fetchPopularMovies, popularMovies } = useFetchMovies()
 
 /**
  * Módulos do Swiper
@@ -17,7 +17,7 @@ onMounted(async () => {
   updateViewportWidth()
   window.addEventListener('resize', updateViewportWidth)
 
-  await getFiveBanners()
+  await fetchPopularMovies(5)
 })
 
 onUnmounted(() => {
@@ -28,7 +28,7 @@ onUnmounted(() => {
 <template>
   <div class="banner-swiper">
     <swiper
-      v-if="popularBanners.length > 0"
+      v-if="popularMovies.length > 0"
       :modules="modules"
       :pagination="{ clickable: true }"
       :loop="true"
@@ -37,17 +37,17 @@ onUnmounted(() => {
         disableOnInteraction: false
       }"
     >
-      <swiper-slide v-for="banner in popularBanners" :key="banner.id">
+      <swiper-slide v-for="movie in popularMovies" :key="movie.id">
         <div class="banner-swiper__item">
           <div class="banner-swiper__content">
-            <h2 class="banner-swiper__title">{{ banner.title }}</h2>
-            <p class="banner-swiper__overview">{{ banner.overview }}</p>
+            <h2 class="banner-swiper__title">{{ movie.title }}</h2>
+            <p class="banner-swiper__overview">{{ movie.overview }}</p>
           </div>
-          <img class="banner-swiper__image" :src="`${tmdbMediaUrl}/${banner.backdrop_path}`" />
+          <img class="banner-swiper__image" :src="`${tmdbMediaUrl}/${movie.backdrop_path}`" />
           <img
             v-if="displayBlurredBackground"
             class="banner-swiper__background-image"
-            :src="`${tmdbMediaUrl}/${banner.backdrop_path}`"
+            :src="`${tmdbMediaUrl}/${movie.backdrop_path}`"
           />
         </div>
       </swiper-slide>
