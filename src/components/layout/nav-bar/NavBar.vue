@@ -9,7 +9,7 @@ import LorePixelLogo from '@/components/icons/LorePixelLogo.vue'
   <div class="nav-bar">
     <PageContainer>
       <div class="nav-bar__logo">
-        <img src="@/assets/logo-3.png" alt="logo" />
+        <img src="@/assets/logo.png" alt="logo" />
         <LorePixelLogo />
       </div>
     </PageContainer>

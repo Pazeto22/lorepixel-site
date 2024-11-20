@@ -1,0 +1,37 @@
+@import '/src/design/colors.scss';
+
+.page-footer {
+  padding: 2rem 0;
+  width: 100%;
+  background-color: $main-black;
+  text-align: center;
+  color: $main-white;
+
+  &__logo {
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+
+    & > img {
+      height: 64px;
+      width: auto;
+    }
+
+    & > svg {
+      height: 16px;
+      width: auto;
+      margin-top: 0.5rem;
+    }
+  }
+
+  &__copyright {
+    color: $main-white;
+
+    &:hover {
+      text-decoration: underline;
+      background: transparent;
+    }
+  }
+}

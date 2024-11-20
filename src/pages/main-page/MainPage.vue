@@ -51,7 +51,7 @@ const fetchNowPlayingMovies = async (): Promise<void> => {
 
   try {
     await api.get(`movie/now_playing`, { params }).then((response) => {
-      nowPlayingMovies.value = response.data.results
+      nowPlayingMovies.value = response.data.results.splice(0, 16)
     })
   } catch (err) {
     console.error(err)
