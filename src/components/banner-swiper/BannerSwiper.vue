@@ -2,7 +2,7 @@
 import { onMounted, onUnmounted } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination, A11y, Autoplay } from 'swiper/modules'
-import { useBannerSwiper } from '@/composables/useBannerSwiper'
+import { useBannerSwiper } from '@/composables'
 import { tmdbMediaUrl } from '@/config/constants'
 
 const { updateViewportWidth, getFiveBanners, popularBanners, displayBlurredBackground } =
