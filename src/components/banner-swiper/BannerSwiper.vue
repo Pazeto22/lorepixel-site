@@ -34,7 +34,7 @@ onUnmounted(() => {
       :loop="true"
       :autoplay="{
         delay: 4000,
-        disableOnInteraction: false
+        disableOnInteraction: true
       }"
     >
       <swiper-slide v-for="movie in popularMovies" :key="movie.id">
