@@ -2,6 +2,8 @@
 import { computed, ref } from 'vue'
 import dayjs from 'dayjs'
 import { CircleProgressBar } from 'circle-progress.vue'
+
+import { tmdbMediaUrl } from '@/config/constants'
 import PlusCircle from 'vue-material-design-icons/PlusCircle.vue'
 
 const props = defineProps({
@@ -22,11 +24,6 @@ const props = defineProps({
     default: '00/00/0000'
   }
 })
-
-/**
- * URL base para as imagens do TMDB
- */
-const tmdbMediaUrl = 'https://image.tmdb.org/t/p/original'
 
 /**
  * Score do filme

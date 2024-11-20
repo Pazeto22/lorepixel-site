@@ -9,6 +9,13 @@
     }
   ],
   "compilerOptions": {
-    "types": ["node"]
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "skipLibCheck": true,
+    "strict": true,
+    "types": ["vitest/globals"]
   }
 }

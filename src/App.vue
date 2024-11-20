@@ -1,14 +1,18 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import { NavBar } from '@/components/layout'
+import { NavBar, PageFooter } from '@/components/layout'
 </script>
 
 <template>
   <header>
-    <nav-bar />
+    <NavBar />
   </header>
 
   <RouterView />
+
+  <footer>
+    <PageFooter />
+  </footer>
 </template>
 
 <style>
