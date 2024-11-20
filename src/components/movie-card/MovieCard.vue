@@ -4,6 +4,7 @@ import dayjs from 'dayjs'
 import { CircleProgressBar } from 'circle-progress.vue'
 
 import { tmdbMediaUrl } from '@/config/constants'
+import { ButtonIcon } from '@/components/layout'
 import PlusCircle from 'vue-material-design-icons/PlusCircle.vue'
 
 const props = defineProps({
@@ -93,13 +94,9 @@ const trickyFunction = () => {
         </p>
 
         <div class="movie-card__bottom">
-          <button
-            @click="trickyFunction"
-            v-tooltip="'Adicione a sua lista'"
-            class="movie-card__button"
-          >
-            <PlusCircle class="icon" />
-          </button>
+          <ButtonIcon :on-click="trickyFunction" tooltip="Adicione a sua lista">
+            <PlusCircle />
+          </ButtonIcon>
 
           <CircleProgressBar
             :value="props.score"

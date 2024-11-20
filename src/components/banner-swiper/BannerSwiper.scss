@@ -18,6 +18,12 @@
     object-fit: cover !important;
   }
 
+  @media (max-width: 768px) {
+    &__image {
+      height: 500px;
+    }
+  }
+
   &__background-image {
     position: absolute;
     top: 0;

@@ -65,27 +65,4 @@
     left: 0;
     bottom: 0;
   }
-
-  &__button {
-    outline: none;
-    border: 1px solid $main-gray;
-    border-radius: 16px;
-    width: 48px;
-    height: 48px;
-    background-color: $main-black;
-    text-decoration: none;
-    color: $main-white;
-
-    span {
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    &:hover {
-      cursor: pointer;
-      background-color: $main-gray;
-    }
-  }
 }
