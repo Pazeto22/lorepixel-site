@@ -28,7 +28,7 @@ export function useFetchMovies() {
   })
 
   /**
-   * Busca na API os 8 próximos lançamentos para exibir na seção de próximos lançamentos
+   * Busca na API uma quantidade definida de filmes que ainda não foram lançados
    */
   const fetchUpcomingMovies = async (quantity?: number): Promise<void> => {
     try {
@@ -49,7 +49,7 @@ export function useFetchMovies() {
   }
 
   /**
-   * Busca na API os 5 filmes mais populares para exibir nos banners
+   * Busca na API uma quantidade definida de filmes que estão em cartaz
    */
   const fetchNowPlayingMovies = async (quantity?: number): Promise<void> => {
     try {
@@ -68,7 +68,7 @@ export function useFetchMovies() {
   }
 
   /**
-   * Busca na API os 5 filmes mais populares para exibir nos banners
+   * Busca na API uma quantidade definida de filmes mais populares
    */
   const fetchPopularMovies = async (quantity?: number): Promise<void> => {
     try {
