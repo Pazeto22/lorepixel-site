@@ -84,7 +84,8 @@ const toMovieDetails = () => {
 /**
  * Função pegadinha para o botão de adicionar à lista
  */
-const trickyFunction = () => {
+const trickyFunction = (event: MouseEvent) => {
+  event.stopPropagation()
   alert('Clica não, carai!')
 }
 </script>

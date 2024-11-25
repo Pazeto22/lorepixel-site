@@ -3,6 +3,7 @@ import { computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useFetchMovies } from '@/composables'
 import { PageContainer } from '@/components/layout'
+import { MovieDetailsBanner } from '@/components'
 
 const route = useRoute()
 const { fetchMovieDetails, fetchMovieCredits, movieDetails, movieCredits } = useFetchMovies()
@@ -25,7 +26,9 @@ onMounted(async () => {
 <template>
   <div class="movie-details">
     <div v-if="hasMovie" class="movie-details__error">Filme não encontrado.</div>
-    <div v-else class="movie-details__content">
+    <div v-else-if="movieDetails" class="movie-details__content">
+      <MovieDetailsBanner :movie-details="movieDetails" />
+
       <PageContainer>
         <h1>Movie Details</h1>
         <p>Movie ID: {{ movieId }}</p>
