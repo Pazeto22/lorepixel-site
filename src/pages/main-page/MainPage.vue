@@ -23,7 +23,7 @@ onMounted(() => {
           <MovieCard
             v-for="movie in upcomingMovies"
             :key="movie.id"
-            :id="movie.id"
+            :movie-id="movie.id"
             :poster="movie.poster_path"
             :score="movie.vote_average"
             :title="movie.title"
@@ -37,7 +37,7 @@ onMounted(() => {
           <MovieCard
             v-for="movie in nowPlayingMovies"
             :key="movie.id"
-            :id="movie.id"
+            :movie-id="movie.id"
             :poster="movie.poster_path"
             :score="movie.vote_average"
             :title="movie.title"

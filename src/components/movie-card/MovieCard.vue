@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { useRouter } from 'vue-router'
 import dayjs from 'dayjs'
 import { CircleProgressBar } from 'circle-progress.vue'
 
@@ -7,7 +8,13 @@ import { tmdbMediaUrl } from '@/config/constants'
 import { ButtonIcon } from '@/components/layout'
 import PlusCircle from 'vue-material-design-icons/PlusCircle.vue'
 
+const router = useRouter()
+
 const props = defineProps({
+  movieId: {
+    type: [String, Number],
+    default: ''
+  },
   poster: {
     type: String,
     default: ''
@@ -67,6 +74,14 @@ const getUnfilledColor = () => {
 }
 
 /**
+ * Redireciona para a página de detalhes do filme
+ */
+const toMovieDetails = () => {
+  const movieId = props.movieId
+  router.push({ name: 'movie-details', params: { id: movieId } })
+}
+
+/**
  * Função pegadinha para o botão de adicionar à lista
  */
 const trickyFunction = () => {
@@ -76,7 +91,7 @@ const trickyFunction = () => {
 
 <template>
   <div class="movie-card">
-    <div class="movie-card__wrapper">
+    <div @click="toMovieDetails()" class="movie-card__wrapper">
       <figure class="movie-card__figure">
         <slot name="image">
           <img

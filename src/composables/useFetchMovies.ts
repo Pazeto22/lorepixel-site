@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import api from '@/config/api'
-import type { MovieType } from '@/types/movieType'
+import type { MovieType, MovieDetailsType, MovieCreditsType } from '@/types'
 
 export function useFetchMovies() {
   /**
@@ -17,6 +17,16 @@ export function useFetchMovies() {
    * Lista de filmes mais populares
    */
   const popularMovies = ref<MovieType[]>([])
+
+  /**
+   * Detalhes de um filme
+   */
+  const movieDetails = ref<MovieDetailsType>()
+
+  /**
+   * Créditos de um filme
+   */
+  const movieCredits = ref<MovieCreditsType>()
 
   /**
    * Parâmetros para a busca de filmes na API
@@ -86,12 +96,43 @@ export function useFetchMovies() {
     }
   }
 
+  /**
+   * Busca na API os detalhes de um filme
+   */
+  const fetchMovieDetails = async (movieId: number | string): Promise<void> => {
+    try {
+      await api.get(`movie/${movieId}`, { params: fetchParams }).then((response) => {
+        movieDetails.value = response.data
+      })
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  /**
+   * Busca na API os créditos de um filme
+   */
+  const fetchMovieCredits = async (movieId: number | string): Promise<void> => {
+    try {
+      await api.get(`movie/${movieId}/credits`, { params: fetchParams }).then((response) => {
+        console.log(response.data)
+        movieCredits.value = response.data
+      })
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
   return {
     fetchNowPlayingMovies,
     fetchUpcomingMovies,
     fetchPopularMovies,
+    fetchMovieDetails,
+    fetchMovieCredits,
     nowPlayingMovies,
     upcomingMovies,
-    popularMovies
+    popularMovies,
+    movieDetails,
+    movieCredits
   }
 }
