@@ -9,12 +9,16 @@
   background-color: $main-black;
   text-decoration: none;
   color: $main-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .material-design-icon {
     margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: fit-content;
   }
 
   &:hover {

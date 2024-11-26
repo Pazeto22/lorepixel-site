@@ -1,0 +1,8 @@
+@import '/src/styles/colors.scss';
+
+.score-bar {
+  color: $main-white;
+  font-weight: 500;
+  width: fit-content;
+  height: fit-content;
+}

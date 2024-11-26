@@ -14,8 +14,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="button-icon">
-    <button @click="props.onClick" :v-tooltip="tooltip" class="button-icon">
+  <div class="button-icon" v-tooltip="props.tooltip">
+    <button @click="props.onClick" class="button-icon">
       <slot />
     </button>
   </div>
